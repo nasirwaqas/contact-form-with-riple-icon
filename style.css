@@ -1,0 +1,270 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+
+.popup-container {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('google-map.png');
+  justify-content: center;
+  align-items: center;
+
+}
+
+.popup-form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 95%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  box-sizing: border-box;
+
+  overflow-x: none;
+}
+
+
+
+.popup-form input {
+  width: 100%;
+  padding-bottom: 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border: none;
+  border-bottom: 2px solid rgb(223, 220, 220);
+}
+
+.popup-form input[type="text"] {
+  padding-bottom: 60px;
+
+}
+
+.popup-form label {
+  color: #9c9d95;
+  font-size: 12px;
+
+}
+
+.inner-container {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  overflow: none;
+  width: 83%;
+
+  box-sizing: border-box;
+}
+
+.inner-container h2 {
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  font-size-adjust: inherit;
+  margin-top: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.popup-form button {
+  width: 120px;
+  border-radius: 50px;
+  padding: 10px;
+  background: #fd4b59;
+  box-shadow: 0 20px 70px 0 #fb6572;
+  color: white;
+  border: none;
+  font-size: 12px;
+  margin: 0 auto;
+
+
+  cursor: pointer;
+}
+
+
+.close-btn {
+  position: absolute;
+  top: -9px;
+  right: -10px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #f9f0f0;
+  border-radius: 50%;
+  width: 19px;
+  height: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 30px;
+
+  margin-bottom: 15px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-row label {
+  min-width: 80px;
+  margin-right: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+
+input {
+  outline-offset: unset;
+  outline: none;
+  border: none;
+
+}
+
+
+input::placeholder {
+  color: #949591;
+  margin-left: 0;
+  padding-left: 0;
+  font-size: 13px;
+
+
+
+}
+
+.call-center-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 2px;
+  padding-top: 30px;
+  margin-top: 20px;
+  color: #888;
+  word-break: break-word;
+  box-sizing: border-box;
+  font-size: 13px;
+}
+
+.call-center-row h4 {
+  color: #fd4b59;
+}
+
+.icon-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  /* WhatsApp green color */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  overflow: visible;
+    color: white;
+  font-size: 30px;
+}
+
+
+.icon-container:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 5px solid #25D366;
+  animation: animate 2s linear infinite;
+}
+
+.icon-container:after {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 5px solid #25D366;
+  animation: animate 2s 1s linear infinite;
+}
+
+@keyframes animate {
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .popup-form {
+    width: 98%;
+    height: auto;
+    min-width: 0;
+    padding: 12px;
+  }
+
+  .inner-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .popup-form button {
+    width: 100px;
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 14px;
+    margin-top: 16px;
+    min-width: 0;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .call-center-row {
+    font-size: 12px;
+    margin-top: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
